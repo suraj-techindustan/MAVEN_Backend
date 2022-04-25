@@ -68,7 +68,7 @@ exports.singleBook = asyncMiddleWare(async(req,res)=>{
 
 
 
-let {title} = req.body
+let {title} = req.params
 console.log('Book Name ::', title)
 
 const showBook = await Book.findOne({title:req.body.title})
