@@ -4,7 +4,7 @@ const bookRoutes = require('../routes/bookRoutes')
 
 module.exports=function(app){
     app.get('/',(req,res)=>{
-        return  res.send(`Welcome To Our Book Store ::`)
+        return  res.send(`Welcome To Our Book Store :::`)
     })
     app.use('/api/v1/user',userRoutes)
     app.use('/api/v1/book',bookRoutes)
