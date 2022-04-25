@@ -66,9 +66,10 @@ exports.getBook=asyncMiddleWare(async(req,res)=>{
 
 exports.singleBook = asyncMiddleWare(async(req,res)=>{
 
-let bookName = req.body.title  
+let {title} = req.body
+console.log('Book Name :', title)
 
-const showBook = await Book.findOne({bookName})
+const showBook = await Book.findOne({title:req.body.title})
 // if(!showBook) return res.status(400).send({message : "No book Found"})
 return res.status(200).send({message : "Book Details" , value : {title : showBook.title ,pageCount: showBook.pageCount ,isbn: showBook.isbn ,publishedDate:showBook.publishedDate ,shortDescription:showBook.shortDescription }})
 
